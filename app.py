@@ -6,6 +6,10 @@ from utils.surveys import DEMOGRAPHICS, FLOW_QUESTIONS, OWNERSHIP_QUESTIONS, OUT
 from utils.data_manager import save_response
 import os
 import base64
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from datetime import datetime
+
 
 def get_img_as_base64(file_path):
     with open(file_path, "rb") as f:
@@ -345,3 +349,4 @@ else:
                 data_dict=response_data
             )
             st.success("Thank you! Your responses have been recorded.")
+
