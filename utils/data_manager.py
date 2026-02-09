@@ -1,6 +1,10 @@
 import pandas as pd
 import os
 from datetime import datetime
+import streamlit as st
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
 
 def save_to_google_sheets(data_dict, sheet_name):
     scope = [
@@ -105,3 +109,4 @@ def save_response1(experiment_name, condition, data_dict):
         df.to_csv(filepath, mode='a', header=False, index=False)
     
     return filename
+
