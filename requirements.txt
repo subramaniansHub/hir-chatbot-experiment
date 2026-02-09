@@ -1,0 +1,8 @@
+streamlit
+pandas
+numpy
+scipy
+statsmodels
+gspread
+oauth2client
+Pillow
