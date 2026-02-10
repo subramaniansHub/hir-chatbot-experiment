@@ -109,20 +109,42 @@ def next_step():
     st.session_state['step_index'] += 1
 
 def handle_option_click(option_text):
-    # Add User Message (Blue Color)
+    step = st.session_state['script_manager'].steps[st.session_state['step_index']]
+
+    # Save responses for chaining
+    if step == "ask_skin_type":
+        st.session_state['skin_type'] = option_text
+
+    elif step == "ask_concern":
+        st.session_state['skin_concern'] = option_text
+
+    elif step == "ask_routine":
+        st.session_state['routine_level'] = option_text
+
+    elif step == "ask_preference":
+        st.session_state['budget'] = option_text  # you used this variable earlier
+
+    # Add user message to chat
     msg_content = f"<span style='color: #2980B9;'>{option_text}</span>"
     st.session_state['messages'].append({"role": "user", "content": msg_content})
-    # If not survey step, move next.
-    # Note: We rely on the app logic to show survey when chat finished.
+
+    # Move to next step
     if st.session_state['script_manager'].steps[st.session_state['step_index']] != "recommendation":
-         next_step()
+        next_step()
+
 
 # --- FUNCTION TO ADD BOT MESSAGE ---
 def add_bot_message_for_current_step():
     bot_text, options = st.session_state['script_manager'].get_message_data(
-        st.session_state['step_index'], 
-        st.session_state['full_condition'],
-        user_name=st.session_state['user_name']
+    st.session_state['step_index'],
+    st.session_state['full_condition'],
+    user_name=st.session_state.get('user_name', 'User'),
+    skin_type=st.session_state.get('skin_type', ''),
+    skin_concern=st.session_state.get('skin_concern', ''),
+    routine_level=st.session_state.get('routine_level', ''),
+    budget=st.session_state.get('budget', '')
+)
+
     )
     
     if bot_text:
@@ -366,6 +388,7 @@ else:
                 data_dict=response_data
             )
             st.success("Thank you! Your responses have been recorded.")
+
 
 
 
