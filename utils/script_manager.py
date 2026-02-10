@@ -63,77 +63,77 @@ class ScriptManager:
             "ask_concern": {
                 "flow_high": "I understand you have {skin_type} skin. What concern would you like to focus on first?",
                 "flow_low": "Select concern.",
-                "own_high": "You chose {skin_type}. What goal would YOU like to prioritise?",
+                "own_high": "You chose {skin_type}. What goal would you like to prioritise?",
                 "own_low": "Select concern:"
             },
 
             "ask_duration": {
                 "flow_high": "Since you mentioned {skin_concern}, how long has this been affecting you?",
                 "flow_low": "Select duration.",
-                "own_high": "How long have YOU been dealing with {skin_concern}?",
+                "own_high": "How long have you been dealing with {skin_concern}?",
                 "own_low": "Select duration:"
             },
 
             "ask_routine": {
                 "flow_high": "That helps. What does your current routine look like for managing {skin_concern}?",
                 "flow_low": "Routine status:",
-                "own_high": "Tell me about YOUR current routine so we can build around it.",
+                "own_high": "Tell me about your current routine so we can build around it.",
                 "own_low": "Select routine:"
             },
 
             "ask_makeup": {
                 "flow_high": "Thanks. With a routine like '{routine_level}', how often do you wear makeup?",
                 "flow_low": "Makeup frequency:",
-                "own_high": "How does makeup fit into YOUR routine?",
+                "own_high": "How does makeup fit into your routine?",
                 "own_low": "Select option:"
             },
 
             "ask_sun": {
                 "flow_high": "Considering your {routine_level} routine and concern about {skin_concern}, how much sun exposure do you usually get?",
                 "flow_low": "Sun exposure:",
-                "own_high": "How much sun does YOUR skin get daily? We'll factor that into YOUR solution.",
+                "own_high": "How much sun does your skin get daily? We'll factor that into your solution.",
                 "own_low": "Select exposure:"
             },
 
             "ask_sleep": {
                 "flow_high": "Sleep also impacts {skin_concern}. How many hours do you typically sleep?",
                 "flow_low": "Sleep duration:",
-                "own_high": "How is YOUR sleep pattern? This shapes YOUR skin health.",
+                "own_high": "How is your sleep pattern? This shapes your skin health.",
                 "own_low": "Select sleep:"
             },
 
             "ask_stress": {
                 "flow_high": "Stress can influence {skin_concern}, especially for {skin_type} skin. How would you rate your stress level?",
                 "flow_low": "Stress level:",
-                "own_high": "How stressed do YOU usually feel? We'll include that in YOUR profile.",
+                "own_high": "How stressed do you usually feel? We'll include that in your profile.",
                 "own_low": "Select stress:"
             },
 
             "ask_fragrance": {
                 "flow_high": "Some people with {skin_type} skin prefer specific scents. What's your fragrance preference?",
                 "flow_low": "Fragrance preference:",
-                "own_high": "Do YOU enjoy scented products or prefer neutral ones?",
+                "own_high": "Do you enjoy scented products or prefer neutral ones?",
                 "own_low": "Select option:"
             },
 
             "ask_sensitivity": {
                 "flow_high": "Given your {skin_concern} concern, do you have any sensitivities we should be careful about?",
                 "flow_low": "Sensitivity status:",
-                "own_high": "Any sensitivities YOU want us to avoid?",
+                "own_high": "Any sensitivities you want us to avoid?",
                 "own_low": "Select sensitivity:"
             },
 
             "ask_preference": {
                 "flow_high": "Almost done, {name}. What texture feels best for your skin?",
                 "flow_low": "Texture preference:",
-                "own_high": "Which texture do YOU personally prefer using?",
+                "own_high": "Which texture do you personally prefer using?",
                 "own_low": "Select texture:"
             },
 
             "recommendation": {
                 "flow_high": "Based on everything you've shared — your {skin_type} skin, focus on {skin_concern}, and current routine — the Hydra-Glow Serum looks like a great fit for you, {name}.",
                 "flow_low": "Recommended: Hydra-Glow Serum.",
-                "own_high": "Here's the profile YOU created, {name}: You chose {skin_type} skin, prioritised {skin_concern}, and described your routine as '{routine_level}'. Based on the choices YOU made, the Hydra-Glow Serum matches YOUR profile.",
+                "own_high": "Here's the profile you created, {name}: You chose {skin_type} skin, prioritised {skin_concern}, and described your routine as '{routine_level}'. Based on the choices you made, the Hydra-Glow Serum matches your profile.",
                 "own_low": "Use Hydra-Glow Serum."
             },
 
@@ -191,6 +191,7 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
+
 
 
 
