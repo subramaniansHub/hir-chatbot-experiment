@@ -82,14 +82,14 @@ class ScriptManager:
             },
 
             "ask_makeup": {
-                "flow_high": "Thanks. With a routine like '{routine}', how often do you wear makeup?",
+                "flow_high": "Thanks. With a routine like '{routine_level}', how often do you wear makeup?",
                 "flow_low": "Makeup frequency:",
                 "own_high": "How does makeup fit into YOUR routine?",
                 "own_low": "Select option:"
             },
 
             "ask_sun": {
-                "flow_high": "Considering your {routine} routine and concern about {skin_concern}, how much sun exposure do you usually get?",
+                "flow_high": "Considering your {routine_level} routine and concern about {skin_concern}, how much sun exposure do you usually get?",
                 "flow_low": "Sun exposure:",
                 "own_high": "How much sun does YOUR skin get daily? We'll factor that into YOUR solution.",
                 "own_low": "Select exposure:"
@@ -133,7 +133,7 @@ class ScriptManager:
             "recommendation": {
                 "flow_high": "Based on everything you've shared — your {skin_type} skin, focus on {skin_concern}, and current routine — the Hydra-Glow Serum looks like a great fit for you, {name}.",
                 "flow_low": "Recommended: Hydra-Glow Serum.",
-                "own_high": "Here's the profile YOU created, {name}: You chose {skin_type} skin, prioritised {skin_concern}, and described your routine as '{routine}'. Based on the choices YOU made, the Hydra-Glow Serum matches YOUR profile.",
+                "own_high": "Here's the profile YOU created, {name}: You chose {skin_type} skin, prioritised {skin_concern}, and described your routine as '{routine_level}'. Based on the choices YOU made, the Hydra-Glow Serum matches YOUR profile.",
                 "own_low": "Use Hydra-Glow Serum."
             },
 
@@ -191,6 +191,7 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
+
 
 
 
