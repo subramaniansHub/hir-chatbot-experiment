@@ -145,7 +145,17 @@ class ScriptManager:
             }
         }
 
-    def get_message_data(self, step_index, condition):
+    def get_message_data(
+        self,
+        step_index,
+        condition,
+        user_name="User",
+        skin_type="",
+        skin_concern="",
+        routine_level="",
+        budget=""
+        ):
+
         if step_index >= len(self.steps):
             return None, None
 
@@ -178,3 +188,4 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
+
