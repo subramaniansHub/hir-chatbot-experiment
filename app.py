@@ -117,10 +117,10 @@ def handle_option_click(option_text):
         st.session_state['skin_type'] = option_text
 
     elif current_step == "ask_concern":
-        st.session_state['concern'] = option_text
+        st.session_state['skin_concern'] = option_text
 
     elif current_step == "ask_routine":
-        st.session_state['routine'] = option_text
+        st.session_state['routine_level'] = option_text
 
     elif current_step == "ask_duration":
         st.session_state['duration'] = option_text
@@ -395,6 +395,7 @@ else:
                 data_dict=response_data
             )
             st.success("Thank you! Your responses have been recorded.")
+
 
 
 
