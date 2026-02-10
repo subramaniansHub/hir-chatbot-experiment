@@ -45,6 +45,12 @@ def save_to_google_sheets(data_dict, sheet_name):
     #row = [data_dict[h] for h in headers]
     #sheet.append_row(row)
 
+    # If sheet empty → add header row first
+    first_row = sheet.row_values(1)
+    if not first_row:
+        sheet.append_row(list(data_dict.keys()))
+
+
     # REMOVE header logic completely for testing
     row = [str(v) for v in data_dict.values()]
     sheet.append_row(row)
@@ -151,6 +157,7 @@ def save_response1(experiment_name, condition, data_dict):
         df.to_csv(filepath, mode='a', header=False, index=False)
     
     return filename
+
 
 
 
