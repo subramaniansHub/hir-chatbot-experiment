@@ -154,38 +154,42 @@ class ScriptManager:
         skin_concern="",
         routine_level="",
         budget=""
-        ):
-
+    ):
+    
         if step_index >= len(self.steps):
             return None, None
-
+    
         step_key = self.steps[step_index]
-
+    
         key_map = {
             "High Flow": "flow_high",
             "Low Flow": "flow_low",
             "High Ownership": "own_high",
             "Low Ownership": "own_low"
         }
-
+    
         script_key = key_map.get(condition, "flow_low")
         message = self.scripts[step_key][script_key]
-
+    
+        # USE VALUES PASSED FROM APP.PY (NOT session_state here)
         context = {
-            "name": st.session_state.get("name", ""),
-            "skin_type": st.session_state.get("ask_skin_type", ""),
-            "concern": st.session_state.get("ask_concern", ""),
-            "routine": st.session_state.get("ask_routine", "")
+            "name": user_name,
+            "skin_type": skin_type,
+            "skin_concern": skin_concern,
+            "routine_level": routine_level,
+            "budget": budget
         }
-
+    
         try:
             message = message.format(**context)
         except:
             pass
-
+    
         options = self.step_options.get(step_key)
         return message, options
 
+
     def get_total_steps(self):
         return len(self.steps)
+
 
