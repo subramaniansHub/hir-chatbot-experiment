@@ -109,28 +109,33 @@ def next_step():
     st.session_state['step_index'] += 1
 
 def handle_option_click(option_text):
-    step = st.session_state['script_manager'].steps[st.session_state['step_index']]
 
-    # Save responses for chaining
-    if step == "ask_skin_type":
+    current_step = st.session_state['script_manager'].steps[st.session_state['step_index']]
+
+    # STORE USER CHOICES FOR CHAINING
+    if current_step == "ask_skin_type":
         st.session_state['skin_type'] = option_text
 
-    elif step == "ask_concern":
-        st.session_state['skin_concern'] = option_text
+    elif current_step == "ask_concern":
+        st.session_state['concern'] = option_text
 
-    elif step == "ask_routine":
-        st.session_state['routine_level'] = option_text
+    elif current_step == "ask_routine":
+        st.session_state['routine'] = option_text
 
-    elif step == "ask_preference":
-        st.session_state['budget'] = option_text  # you used this variable earlier
+    elif current_step == "ask_duration":
+        st.session_state['duration'] = option_text
 
-    # Add user message to chat
+    elif current_step == "ask_sun":
+        st.session_state['sun'] = option_text
+
+    # Add User Message
     msg_content = f"<span style='color: #2980B9;'>{option_text}</span>"
     st.session_state['messages'].append({"role": "user", "content": msg_content})
 
-    # Move to next step
+    # Move forward
     if st.session_state['script_manager'].steps[st.session_state['step_index']] != "recommendation":
         next_step()
+
 
 
 # --- FUNCTION TO ADD BOT MESSAGE ---
@@ -140,10 +145,10 @@ def add_bot_message_for_current_step():
     st.session_state['full_condition'],
     user_name=st.session_state.get('user_name', 'User'),
     skin_type=st.session_state.get('skin_type', ''),
-    skin_concern=st.session_state.get('skin_concern', ''),
-    routine_level=st.session_state.get('routine_level', ''),
-    budget=st.session_state.get('budget', '')
+    skin_concern=st.session_state.get('concern', ''),
+    routine_level=st.session_state.get('routine', '')
     )
+
 
     if bot_text:
         # Style Bot Message (Dark / Standard Color)
@@ -386,6 +391,7 @@ else:
                 data_dict=response_data
             )
             st.success("Thank you! Your responses have been recorded.")
+
 
 
 
