@@ -30,12 +30,16 @@ def save_to_google_sheets(data_dict, sheet_name):
     st.write("Writing row to:", sheet_name)
     st.write(data_dict)
     
-    
-    # If sheet empty → add header row first
-    if not sheet.get_all_values():
-        sheet.append_row(list(data_dict.keys()))
+    # Force write to a specific row to test
+    sheet.update('A1', 'WORKING')
+    sheet.update('A2', datetime.now().strftime("%H:%M:%S"))
+    sheet.update('A3', str(data_dict))
 
-    sheet.append_row(list(data_dict.values()))
+    # If sheet empty → add header row first
+    # if not sheet.get_all_values():
+    #    sheet.append_row(list(data_dict.keys()))
+
+    # sheet.append_row(list(data_dict.values()))
 
 def save_response(experiment_name, condition, data_dict):
 
@@ -136,6 +140,7 @@ def save_response1(experiment_name, condition, data_dict):
         df.to_csv(filepath, mode='a', header=False, index=False)
     
     return filename
+
 
 
 
