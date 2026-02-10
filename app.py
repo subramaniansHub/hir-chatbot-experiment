@@ -297,15 +297,31 @@ elif not st.session_state['chat_finished']:
                      st.rerun()
              else:
                 if prompt := st.chat_input("Type your answer..."):
-                    if st.session_state['step_index'] == 1: # Name step
-                         st.session_state['user_name'] = prompt
-                    
-                    # Add User Message (Blue)
+                    step = st.session_state['step_index']
+                
+                    # STORE KEY ANSWERS
+                    if step == 1:  # Name
+                        st.session_state['user_name'] = prompt
+                
+                    elif step == 2:  # Skin type
+                        st.session_state['skin_type'] = prompt
+                
+                    elif step == 3:  # Concern
+                        st.session_state['skin_concern'] = prompt
+                
+                    elif step == 4:  # Routine level
+                        st.session_state['routine_level'] = prompt
+                
+                    elif step == 5:  # Budget
+                        st.session_state['budget'] = prompt
+                
+                    # Add User Message
                     styled_prompt = f"<span style='color: #2980B9;'>{prompt}</span>"
                     st.session_state['messages'].append({"role": "user", "content": styled_prompt})
-                    
-                    next_step() # Move index to next step so Bot knows what to say next
+                
+                    next_step()
                     st.rerun()
+
 
 # --- SECTION 3: SURVEY ---
 else:
@@ -350,6 +366,7 @@ else:
                 data_dict=response_data
             )
             st.success("Thank you! Your responses have been recorded.")
+
 
 
 
