@@ -143,10 +143,8 @@ def add_bot_message_for_current_step():
     skin_concern=st.session_state.get('skin_concern', ''),
     routine_level=st.session_state.get('routine_level', ''),
     budget=st.session_state.get('budget', '')
-)
-
     )
-    
+
     if bot_text:
         # Style Bot Message (Dark / Standard Color)
         # Note: We apply styling in the markdown string
@@ -388,6 +386,7 @@ else:
                 data_dict=response_data
             )
             st.success("Thank you! Your responses have been recorded.")
+
 
 
 
