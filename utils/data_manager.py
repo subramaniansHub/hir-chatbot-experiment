@@ -28,7 +28,7 @@ def save_to_google_sheets(data_dict, sheet_name):
     
     st.write("Writing row to:", sheet_name)
     st.write(data_dict)
-    sheet.update('A1', 'TEST WRITE')
+    
     
     # If sheet empty → add header row first
     if not sheet.get_all_values():
@@ -135,6 +135,7 @@ def save_response1(experiment_name, condition, data_dict):
         df.to_csv(filepath, mode='a', header=False, index=False)
     
     return filename
+
 
 
 
