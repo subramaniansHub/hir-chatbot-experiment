@@ -68,14 +68,14 @@ class ScriptManager:
             },
 
             "ask_duration": {
-                "flow_high": "Since you mentioned {concern}, how long has this been affecting you?",
+                "flow_high": "Since you mentioned {skin_concern}, how long has this been affecting you?",
                 "flow_low": "Select duration.",
-                "own_high": "How long have YOU been dealing with {concern}?",
+                "own_high": "How long have YOU been dealing with {skin_concern}?",
                 "own_low": "Select duration:"
             },
 
             "ask_routine": {
-                "flow_high": "That helps. What does your current routine look like for managing {concern}?",
+                "flow_high": "That helps. What does your current routine look like for managing {skin_concern}?",
                 "flow_low": "Routine status:",
                 "own_high": "Tell me about YOUR current routine so we can build around it.",
                 "own_low": "Select routine:"
@@ -89,21 +89,21 @@ class ScriptManager:
             },
 
             "ask_sun": {
-                "flow_high": "Considering your {routine} routine and concern about {concern}, how much sun exposure do you usually get?",
+                "flow_high": "Considering your {routine} routine and concern about {skin_concern}, how much sun exposure do you usually get?",
                 "flow_low": "Sun exposure:",
                 "own_high": "How much sun does YOUR skin get daily? We'll factor that into YOUR solution.",
                 "own_low": "Select exposure:"
             },
 
             "ask_sleep": {
-                "flow_high": "Sleep also impacts {concern}. How many hours do you typically sleep?",
+                "flow_high": "Sleep also impacts {skin_concern}. How many hours do you typically sleep?",
                 "flow_low": "Sleep duration:",
                 "own_high": "How is YOUR sleep pattern? This shapes YOUR skin health.",
                 "own_low": "Select sleep:"
             },
 
             "ask_stress": {
-                "flow_high": "Stress can influence {concern}, especially for {skin_type} skin. How would you rate your stress level?",
+                "flow_high": "Stress can influence {skin_concern}, especially for {skin_type} skin. How would you rate your stress level?",
                 "flow_low": "Stress level:",
                 "own_high": "How stressed do YOU usually feel? We'll include that in YOUR profile.",
                 "own_low": "Select stress:"
@@ -117,7 +117,7 @@ class ScriptManager:
             },
 
             "ask_sensitivity": {
-                "flow_high": "Given your {concern} concern, do you have any sensitivities we should be careful about?",
+                "flow_high": "Given your {skin_concern} concern, do you have any sensitivities we should be careful about?",
                 "flow_low": "Sensitivity status:",
                 "own_high": "Any sensitivities YOU want us to avoid?",
                 "own_low": "Select sensitivity:"
@@ -131,9 +131,9 @@ class ScriptManager:
             },
 
             "recommendation": {
-                "flow_high": "Based on everything you've shared — your {skin_type} skin, focus on {concern}, and current routine — the Hydra-Glow Serum looks like a great fit for you, {name}.",
+                "flow_high": "Based on everything you've shared — your {skin_type} skin, focus on {skin_concern}, and current routine — the Hydra-Glow Serum looks like a great fit for you, {name}.",
                 "flow_low": "Recommended: Hydra-Glow Serum.",
-                "own_high": "Here's the profile YOU created, {name}: You chose {skin_type} skin, prioritised {concern}, and described your routine as '{routine}'. Based on the choices YOU made, the Hydra-Glow Serum matches YOUR profile.",
+                "own_high": "Here's the profile YOU created, {name}: You chose {skin_type} skin, prioritised {skin_concern}, and described your routine as '{routine}'. Based on the choices YOU made, the Hydra-Glow Serum matches YOUR profile.",
                 "own_low": "Use Hydra-Glow Serum."
             },
 
@@ -191,5 +191,6 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
+
 
 
