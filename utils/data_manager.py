@@ -8,8 +8,8 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 def save_to_google_sheets(data_dict, sheet_name):
     scope = [
-        "https://spreadsheets.google.com/feeds",
-        "https://www.googleapis.com/auth/drive"
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive"
     ]
 
     creds_dict = st.secrets["gcp_service_account"]
@@ -21,7 +21,10 @@ def save_to_google_sheets(data_dict, sheet_name):
     client = gspread.authorize(creds)
 
     sheet = client.open("Hir-chatbot-experiment").worksheet(sheet_name)
-
+    
+    st.write("Writing row to:", sheet_name)
+    st.write(data_dict)
+    
     # If sheet empty → add header row first
     if not sheet.get_all_values():
         sheet.append_row(list(data_dict.keys()))
@@ -109,5 +112,6 @@ def save_response1(experiment_name, condition, data_dict):
         df.to_csv(filepath, mode='a', header=False, index=False)
     
     return filename
+
 
 
