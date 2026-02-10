@@ -36,14 +36,21 @@ def save_to_google_sheets(data_dict, sheet_name):
     # sheet.update('A3', [[str(data_dict)]])
 
     # If sheet empty → add header row first
-    if not sheet.get_all_values():
-        sheet.append_row(list(data_dict.keys()))
+    #if not sheet.get_all_values():
+    #    sheet.append_row(list(data_dict.keys()))
 
     # sheet.append_row(list(data_dict.values()))
 
-    headers = list(data_dict.keys())
-    row = [data_dict[h] for h in headers]
+    #headers = list(data_dict.keys())
+    #row = [data_dict[h] for h in headers]
+    #sheet.append_row(row)
+
+    # REMOVE header logic completely for testing
+    row = [str(v) for v in data_dict.values()]
     sheet.append_row(row)
+    
+    st.write("APPEND EXECUTED")
+
 
 def save_response(experiment_name, condition, data_dict):
 
@@ -144,6 +151,7 @@ def save_response1(experiment_name, condition, data_dict):
         df.to_csv(filepath, mode='a', header=False, index=False)
     
     return filename
+
 
 
 
