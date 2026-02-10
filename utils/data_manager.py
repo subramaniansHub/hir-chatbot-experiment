@@ -55,7 +55,7 @@ def save_to_google_sheets(data_dict, sheet_name):
     row = [str(v) for v in data_dict.values()]
     sheet.append_row(row)
     
-    st.write("APPEND EXECUTED")
+    # st.write("APPEND EXECUTED")
 
 
 def save_response(experiment_name, condition, data_dict):
@@ -157,6 +157,7 @@ def save_response1(experiment_name, condition, data_dict):
         df.to_csv(filepath, mode='a', header=False, index=False)
     
     return filename
+
 
 
 
