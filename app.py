@@ -343,12 +343,13 @@ else:
         submitted = st.form_submit_button("Submit Responses")
         
         if submitted:
-            save_response()
-            #save_response(
-            #    experiment_name=f"Experiment {st.session_state['experiment_group']}",
-            #    condition=st.session_state['full_condition'],
-            #    data_dict=response_data
-            #)
+            #save_response()
+            save_response(
+                experiment_name=f"Experiment {st.session_state['experiment_group']}",
+                condition=st.session_state['full_condition'],
+                data_dict=response_data
+            )
             st.success("Thank you! Your responses have been recorded.")
+
 
 
