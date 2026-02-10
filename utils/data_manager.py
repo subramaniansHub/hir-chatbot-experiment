@@ -31,8 +31,26 @@ def save_to_google_sheets(data_dict, sheet_name):
 
     sheet.append_row(list(data_dict.values()))
 
+def save_response(experiment_name, condition, data_dict):
 
-def save_response():
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # Add metadata (same as CSV version)
+    data_dict['timestamp'] = timestamp
+    data_dict['condition'] = condition
+    data_dict['experiment'] = experiment_name
+
+    # Decide sheet
+    if "Flow" in experiment_name:
+        sheet_name = "FlowData"
+    else:
+        sheet_name = "OwnershipData"
+
+    # Send to Google Sheets
+    save_to_google_sheets(data_dict, sheet_name)
+
+
+def save_response2():
     responses = st.session_state.get("responses", {})
 
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -112,6 +130,7 @@ def save_response1(experiment_name, condition, data_dict):
         df.to_csv(filepath, mode='a', header=False, index=False)
     
     return filename
+
 
 
 
