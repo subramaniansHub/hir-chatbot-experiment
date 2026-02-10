@@ -20,7 +20,11 @@ def save_to_google_sheets(data_dict, sheet_name):
 
     client = gspread.authorize(creds)
 
-    sheet = client.open("Hir-chatbot-experiment").worksheet(sheet_name)
+    #sheet = client.open("Hir-chatbot-experiment").worksheet(sheet_name)
+    sheet = client.open_by_url(
+    "https://docs.google.com/spreadsheets/d/1OQZnS1-gCmIgmI4huiQf6wMfwSlbPFLhn0z7E7Omvlo/edit?gid=0#gid=0"
+    ).worksheet(sheet_name)
+
     
     st.write("Writing row to:", sheet_name)
     st.write(data_dict)
@@ -130,6 +134,7 @@ def save_response1(experiment_name, condition, data_dict):
         df.to_csv(filepath, mode='a', header=False, index=False)
     
     return filename
+
 
 
 
