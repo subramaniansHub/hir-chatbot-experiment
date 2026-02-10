@@ -150,7 +150,7 @@ def add_bot_message_for_current_step():
 
     skin_type=st.session_state.get('skin_type', ''),
     skin_concern=st.session_state.get('skin_concern', ''),
-    routine_level=st.session_state.get('skin_routine', '')
+    routine_level=st.session_state.get('routine_level', '')
     )
 
 
@@ -395,6 +395,7 @@ else:
                 data_dict=response_data
             )
             st.success("Thank you! Your responses have been recorded.")
+
 
 
 
