@@ -176,6 +176,9 @@ if not st.session_state.get('consent_given', False):
     **Study Purpose:**
     This academic study aims to understand user interactions with AI assistants in the context of Personal Care product recommendations.
     
+    **Your task:**
+    We would like you to interact with the AI Assistant assuming you are going through a real skincare consultation. 
+    
     **Privacy:**
     -   No personal data will be stored or shared.
     -   Your responses are used purely for academic research purposes.
@@ -446,6 +449,7 @@ else:
                 data_dict=response_data
             )
             st.success("Thank you! Your responses have been recorded.")
+
 
 
 
