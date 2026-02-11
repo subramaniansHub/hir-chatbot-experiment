@@ -393,7 +393,7 @@ else:
                 response_data[q['id']] = st.slider(q['question'], q['min'], q['max'])
                 # scale anchors under the slider
                 st.markdown(
-                    f"<div style='display:flex; justify-content:space-between; font-size:13px;  margin-bottom:25px;'>"
+                    f"<div style='display:flex; justify-content:space-between; font-size:13px;  margin-bottom:50px;'>"
                     f"<span>{q['min']} ({q['labels'][0]})</span>"
                     f"<span>{q['max']} ({q['labels'][1]})</span>"
                     f"</div>",
@@ -402,7 +402,7 @@ else:
 
 
         st.markdown("---")
-        st.info("Your Experience")
+        st.info("Your experience of the interaction")
         
         if st.session_state['experiment_group'] == 'Flow':
             questions = FLOW_QUESTIONS
@@ -413,7 +413,7 @@ else:
             #response_data[q['id']] = st.slider(q['question'], 1, 5, key=q['id'], help="1=Strongly Disagree, 5=Strongly Agree")
             response_data[q['id']] = st.slider(q['question'], 1, 5, key=q['id'])
             st.markdown(
-                "<div style='display:flex; justify-content:space-between; font-size:13px;  margin-bottom:25px;'>"
+                "<div style='display:flex; justify-content:space-between; font-size:13px;  margin-bottom:50px;'>"
                 "<span>1 (Strongly Disagree)</span>"
                 "<span>5 (Strongly Agree)</span>"
                 "</div>",
@@ -428,7 +428,7 @@ else:
              # response_data[q['id']] = st.slider(q['question'], 1, 5, key=q['id'], help="1=Strongly Disagree, 5=Strongly Agree")
             response_data[q['id']] = st.slider(q['question'], 1, 5, key=q['id'])
             st.markdown(
-                "<div style='display:flex; justify-content:space-between; font-size:13px;  margin-bottom:25px;'>"
+                "<div style='display:flex; justify-content:space-between; font-size:13px;  margin-bottom:50px;'>"
                 "<span>1 (Strongly Disagree)</span>"
                 "<span>5 (Strongly Agree)</span>"
                 "</div>",
@@ -446,6 +446,7 @@ else:
                 data_dict=response_data
             )
             st.success("Thank you! Your responses have been recorded.")
+
 
 
 
