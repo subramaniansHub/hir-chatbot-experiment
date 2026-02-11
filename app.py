@@ -334,9 +334,11 @@ elif not st.session_state['chat_finished']:
         # If options exist, show buttons
         if options:
             st.write("Select an option:")
-            cols = st.columns(2)
+            # cols = st.columns(2) # options are in 2 columns
+            cols = st.columns(len(options))   # all options in 1 row
             for i, opt in enumerate(options):
-                with cols[i % 2]:
+                # with cols[i % 2]: # options are in 2 columns
+                with cols[i]:  # all options in 1 row
                     if st.button(opt, key=f"btn_{st.session_state['step_index']}_{i}"):
                         handle_option_click(opt)
                         st.rerun()
@@ -452,6 +454,7 @@ else:
                 data_dict=response_data
             )
             st.success("Thank you! Your responses have been recorded.")
+
 
 
 
