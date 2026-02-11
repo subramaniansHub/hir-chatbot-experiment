@@ -138,9 +138,9 @@ class ScriptManager:
             },
 
             "closing": {
-                "flow_high": "It was lovely interacting with you, {name}. I hope this helps you feel more confident in your skincare journey.",
+                "flow_high": "It was lovely interacting with you, {name}!. I hope this helps you feel more confident in your skincare journey.",
                 "flow_low": "End of chat.",
-                "own_high": "This was great, {name}. You were quite aware about yourself in arriving at your skincare profile.",
+                "own_high": "This was wonderful, {name}!. You were well aware about yourself and that helped in arriving at your skincare profile.",
                 "own_low": "End of chat."
             }
         }
@@ -191,6 +191,7 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
+
 
 
 
