@@ -32,7 +32,7 @@ class ScriptManager:
             "ask_sun": ["High exposure", "Moderate exposure", "Low exposure", "Zero exposure"],
             "ask_sleep": ["Less than 5 hrs", "5–6 hrs", "7–8 hrs", "More than 8 hrs"],
             "ask_stress": ["Very high", "Moderate", "Low", "Rarely stressed"],
-            "ask_fragrance": ["Aromatic scents", "Light scents", "No fragrance", "No preference"],
+            "ask_fragrance": ["Fresh scents", "Mild scents", "Unscented", "No preference"],
             "ask_sensitivity": ["Very sensitive", "Sometimes reactive", "Resilient skin", "Unsure"],
             "ask_preference": ["Lightweight Gel", "Rich Cream", "Oil-based", "Milky Lotion"]
         }
@@ -111,9 +111,9 @@ class ScriptManager:
 
             "ask_fragrance": {
                 "flow_high": "Some people with {skin_type} skin prefer specific scents. What's your fragrance preference?",
-                "flow_low": "Fragrance preference:",
+                "flow_low": "Fragrance preferred in product:",
                 "own_high": "Do you enjoy scented products or prefer neutral ones?",
-                "own_low": "Fragrance option:"
+                "own_low": "Fragrance preferred in product:"
             },
 
             "ask_sensitivity": {
@@ -191,6 +191,7 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
+
 
 
 
