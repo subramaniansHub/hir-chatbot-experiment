@@ -63,7 +63,7 @@ class ScriptManager:
             "ask_concern": {
                 "flow_high": "I understand you have {skin_type} skin. What concern would you like to focus on first?",
                 "flow_low": "Select concern.",
-                "own_high": "You chose {skin_type}. What goal would you like to prioritise?",
+                "own_high": "You chose {skin_type} skin. What goal would you like to prioritise?",
                 "own_low": "Select concern:"
             },
 
@@ -191,6 +191,7 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
+
 
 
 
