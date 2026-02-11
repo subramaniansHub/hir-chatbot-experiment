@@ -17,7 +17,8 @@ def get_img_as_base64(file_path):
     return base64.b64encode(data).decode()
 
 # Page Configuration
-st.set_page_config(page_title="Skincare Personal Assistance", page_icon="✨", layout="centered")
+# st.set_page_config(page_title="Skincare Personal Assistance", page_icon="✨", layout="centered")
+st.set_page_config(page_title="Skincare Personal Assistance", page_icon="✨", layout="wide")
 
 # Custom CSS
 st.markdown("""
@@ -415,6 +416,7 @@ else:
                 data_dict=response_data
             )
             st.success("Thank you! Your responses have been recorded.")
+
 
 
 
