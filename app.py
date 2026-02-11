@@ -198,7 +198,7 @@ elif not st.session_state['started']:
     </div>
     """, unsafe_allow_html=True)
 
-    col1, col2 = st.columns([1, 1], gap="large")
+    col1, col2 = st.columns([1.5, 1], gap="large")
     
     with col1:
         st.image(HOME_IMAGE_PATH, use_container_width=True)
@@ -415,6 +415,7 @@ else:
                 data_dict=response_data
             )
             st.success("Thank you! Your responses have been recorded.")
+
 
 
 
