@@ -26,13 +26,13 @@ class ScriptManager:
             "ask_name": None,
             "ask_skin_type": ["Oily", "Dry", "Combination", "Normal"],
             "ask_concern": ["Acne / Blemishes", "Aging / Wrinkles", "Dryness", "Pigmentation / Spots"],
-            "ask_duration": ["Just recently", "1–2 months", "Over a year", "Always had it"],
-            "ask_routine": ["Just water", "A specific face wash", "Cleanser & Moisturizer", "Full multi-step routine"],
+            "ask_duration": ["Very recently", "1–2 months", "Over a year", "Always had it"],
+            "ask_routine": ["Just water", "Only Moisturizer", "Cleanser & Moisturizer", "Full multi-step routine"],
             "ask_makeup": ["Daily", "Occasionally", "Weekends only", "Rarely / Never"],
             "ask_sun": ["High exposure", "Moderate exposure", "Low exposure", "Zero exposure"],
             "ask_sleep": ["Less than 5 hrs", "5–6 hrs", "7–8 hrs", "More than 8 hrs"],
             "ask_stress": ["Very high", "Moderate", "Low", "Rarely stressed"],
-            "ask_fragrance": ["Fresh scents", "Mild scents", "Unscented", "No preference"],
+            "ask_fragrance": ["Unscented", "Mild scents",  "Fresh scents", "No preference"],
             "ask_sensitivity": ["Very sensitive", "Sometimes reactive", "Resilient skin", "Unsure"],
             "ask_preference": ["Lightweight Gel", "Rich Cream", "Oil-based", "Milky Lotion"]
         }
@@ -191,6 +191,7 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
+
 
 
 
