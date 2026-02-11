@@ -388,7 +388,18 @@ else:
             elif q['type'] == 'select':
                 response_data[q['id']] = st.selectbox(q['question'], q['options'])
             elif q['type'] == 'slider':
-                response_data[q['id']] = st.slider(q['question'], q['min'], q['max'], help=f"1={q['labels'][0]}, {q['max']}={q['labels'][1]}")
+                # response_data[q['id']] = st.slider(q['question'], q['min'], q['max'], help=f"1={q['labels'][0]}, {q['max']}={q['labels'][1]}")
+                
+                response_data[q['id']] = st.slider(q['question'], q['min'], q['max'])
+                # scale anchors under the slider
+                st.markdown(
+                    f"<div style='display:flex; justify-content:space-between; font-size:13px;'>"
+                    f"<span>{q['min']} ({q['labels'][0]})</span>"
+                    f"<span>{q['max']} ({q['labels'][1]})</span>"
+                    f"</div>",
+                    unsafe_allow_html=True
+                )
+
 
         st.markdown("---")
         st.info("Your Experience")
@@ -416,6 +427,7 @@ else:
                 data_dict=response_data
             )
             st.success("Thank you! Your responses have been recorded.")
+
 
 
 
