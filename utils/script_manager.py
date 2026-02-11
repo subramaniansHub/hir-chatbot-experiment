@@ -27,13 +27,13 @@ class ScriptManager:
             "ask_skin_type": ["Oily", "Dry", "Combination", "Normal"],
             "ask_concern": ["Acne / Blemishes", "Aging / Wrinkles", "Dryness", "Pigmentation / Spots"],
             "ask_duration": ["Just recently", "1–2 months", "Over a year", "Always had it"],
-            "ask_routine": ["Just water", "Cleanser & Moisturizer", "Full multi-step routine", "Inconsistent"],
-            "ask_makeup": ["Daily", "Occasionally", "Weekends only","Rarely / Never"],
-            "ask_sun": ["High exposure", "Moderate exposure", "Low exposure", "Daily sunscreen"],
+            "ask_routine": ["Just water", "A specific face wash", "Cleanser & Moisturizer", "Full multi-step routine"],
+            "ask_makeup": ["Daily", "Occasionally", "Weekends only", "Rarely / Never"],
+            "ask_sun": ["High exposure", "Moderate exposure", "Low exposure", "Zero exposure"],
             "ask_sleep": ["Less than 5 hrs", "5–6 hrs", "7–8 hrs", "More than 8 hrs"],
             "ask_stress": ["Very high", "Moderate", "Low", "Rarely stressed"],
-            "ask_fragrance": ["Love scents", "Light scents", "No fragrance", "No preference"],
-            "ask_sensitivity": ["Very sensitive", "Sometimes react", "Resilient skin", "Unsure"],
+            "ask_fragrance": ["Aromatic scents", "Light scents", "No fragrance", "No preference"],
+            "ask_sensitivity": ["Very sensitive", "Sometimes reactive", "Resilient skin", "Unsure"],
             "ask_preference": ["Lightweight Gel", "Rich Cream", "Oil-based", "Milky Lotion"]
         }
 
@@ -69,23 +69,23 @@ class ScriptManager:
 
             "ask_duration": {
                 "flow_high": "Since you mentioned {skin_concern}, how long has this been affecting you?",
-                "flow_low": "Select duration.",
+                "flow_low": "Duration of the concern:",
                 "own_high": "It's good you are well aware of yourself!. How long have you been dealing with {skin_concern}?",
-                "own_low": "Select duration:"
+                "own_low": "Duration of the concern:"
             },
 
             "ask_routine": {
                 "flow_high": "That helps. What does your current routine look like for managing {skin_concern}?",
-                "flow_low": "Select routine:",
+                "flow_low": "Present skincare routine:",
                 "own_high": "Tell me about your current routine so we can build around it.",
-                "own_low": "Select routine:"
+                "own_low": "Present skincare routine:"
             },
 
             "ask_makeup": {
                 "flow_high": "Thanks. With a '{routine_level}' routine, how often do you wear makeup?",
                 "flow_low": "Makeup frequency:",
                 "own_high": "How does makeup fit into your routine?",
-                "own_low": "Select makeup option:"
+                "own_low": "Makeup frequency:"
             },
 
             "ask_sun": {
@@ -191,6 +191,7 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
+
 
 
 
