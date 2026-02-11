@@ -279,6 +279,26 @@ elif not st.session_state['chat_finished']:
                 except Exception as e:
                     st.error(f"Image load error: {e}")
 
+                # --- ADD CLOSING TEXT JUST BELOW RECOMMENDATION ---
+                closing_index = st.session_state['step_index'] + 1
+                
+                closing_text, _ = st.session_state['script_manager'].get_message_data(
+                    closing_index,
+                    st.session_state['full_condition'],
+                    user_name=st.session_state.get('user_name', ''),
+                    skin_type=st.session_state.get('skin_type', ''),
+                    skin_concern=st.session_state.get('skin_concern', ''),
+                    routine_level=st.session_state.get('routine_level', '')
+                )
+                
+                if closing_text:
+                    styled_closing = f"<br><br><span style='color: #4A235A;'>{closing_text}</span>"
+                    st.session_state['messages'].append({
+                        "role": "assistant",
+                        "content": styled_closing
+                    })
+
+
             # If closing, finish
             if st.session_state['step_index'] >= total_steps - 1:
                 time.sleep(2)
@@ -395,6 +415,7 @@ else:
                 data_dict=response_data
             )
             st.success("Thank you! Your responses have been recorded.")
+
 
 
 
