@@ -93,9 +93,9 @@ DISPENSER_IMAGE_PATH = os.path.join(IMAGES_DIR, 'dispenser.png')
 # Recommended images
 PRODUCT_IMAGES = {
     "Hydra-Glow Satin Serum": "images/hydraglow.png",
-    "AquaLuxe Ultra Nectar": "images/dispenser.png",
+    "AquaLuxe Ultra Nectar": "images/aqualuxe.png",
     "GlowMist Silky Essence": "images/glowmist.png",
-    "AloeVelvet Lumi Shine": "images/dispenser.png"
+    "AloeVelvet Lumi Shine": "images/aloevelvet.png"
 }
 
 PRODUCT_BY_CONDITION = {
@@ -488,6 +488,7 @@ else:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
