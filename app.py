@@ -424,17 +424,17 @@ elif not st.session_state['chat_finished']:
 
 # --- SECTION 3: SURVEY ---
 else:
-    # Force page to open at the top
+    # Invisible anchor at top
+    st.markdown("<div id='top'></div>", unsafe_allow_html=True)
     st.markdown(
-        """
-        <script>
-            setTimeout(function() {
-                window.scrollTo(0, 0);
-            }, 50);
-        </script>
-        """,
-        unsafe_allow_html=True
+    """
+    <script>
+        window.scrollTo(0, 0);
+    </script>
+    """,
+    unsafe_allow_html=True
     )
+
 
     st.subheader("Post-Interaction Survey")
     st.write("Thank you for chatting! Please answer the following questions.")
@@ -513,10 +513,12 @@ else:
             # Force refresh
             st.rerun()
 
-    if st.session_state['responses_submitted']:
+
+if st.session_state['responses_submitted']:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
