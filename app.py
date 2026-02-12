@@ -427,11 +427,13 @@ elif not st.session_state['chat_finished']:
 else:
     st.markdown("""
     <script>
-    window.onload = function() {
-        window.scrollTo(0, 0);
-    };
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
     </script>
     """, unsafe_allow_html=True)
+
 
     ### Heading for Survey
     st.subheader("Post-Interaction Survey")
@@ -516,6 +518,7 @@ if st.session_state['responses_submitted']:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
