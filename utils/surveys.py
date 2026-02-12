@@ -13,7 +13,7 @@ DEMOGRAPHICS = [
         "id": "gender",
         "question": "What is your gender?",
         "type": "select",
-        "options": ["Male", "Female", "Non-binary", "Prefer not to say"]
+        "options": ["Female", "Male",  "Non-binary"]
     },
     {
         "id": "skin_concern_severity",
@@ -39,7 +39,7 @@ DEMOGRAPHICS = [
     },
     {
         "id": "ai_familiarity",
-        "question": "How familiar are you with AI technology?",
+        "question": "How familiar are you with AI and LLMs?",
         "type": "slider",
         "min": 1,
         "max": 5,
@@ -80,4 +80,5 @@ OUTCOMES = [
     {"id": "satisfaction", "question": "I am satisfied effectively with this engagement."},
     {"id": "recommend_intention",  "question": "I would recommend this chatbot to others."}
 ]
+
 
