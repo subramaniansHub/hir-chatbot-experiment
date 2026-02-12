@@ -69,12 +69,15 @@ OWNERSHIP_QUESTIONS = [
     {"id": "own_choice", "question": "I felt that the final choice was mine."},
     {"id": "own_decision", "question": "The recommendation reflects my own decision."},
     {"id": "own_control", "question": "I felt in control of the recommendation process."},
-    {"id": "own_personal", "question": "I feel a sense of personal ownership over the chosen product."}
+    {"id": "own_personal", "question": "I feel a sense of personal ownership over the chosen product."},
+    {"id": "own_identity", "question": "The recommendation felt like it fit who I am."}
 ]
 
 OUTCOMES = [
     {"id": "purchase_intention", "question": "I would be likely to purchase the recommended product."},
     {"id": "perceived_warmth", "question": "The chatbot felt warm and friendly."},
     {"id": "perceived_intelligence", "question": "The chatbot seemed intelligent."},
-    {"id": "satisfaction", "question": "I am satisfied effectively with this engagement."}
+    {"id": "satisfaction", "question": "I am satisfied effectively with this engagement."},
+    {"id": "recommend_intention",  "question": "I would recommend this chatbot to others."}
 ]
+
