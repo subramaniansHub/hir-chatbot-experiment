@@ -90,6 +90,13 @@ IMAGES_DIR = os.path.join(os.path.dirname(__file__), 'images')
 HOME_IMAGE_PATH = os.path.join(IMAGES_DIR, 'products.png')
 DISPENSER_IMAGE_PATH = os.path.join(IMAGES_DIR, 'dispenser.png')
 
+# Recommended images
+PRODUCT_IMAGES = {
+    "Hydra-Glow Satin Serum": "images/hydraglow.png",
+    "AquaLuxe Premium Nectar": "images/aqualuxe.png",
+    "GlowMist Silky Essence": "images/glowmist.png",
+    "AloeVelvet Lumi Shine": "images/aloevera.png"
+}
 
 # --- SESSION STATE INITIALIZATION ---
 if 'responses_submitted' not in st.session_state:
@@ -468,6 +475,7 @@ else:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
