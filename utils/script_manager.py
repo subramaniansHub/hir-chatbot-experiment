@@ -132,9 +132,9 @@ class ScriptManager:
 
             "recommendation": {
                 "flow_high": "Based on everything you've shared — your {skin_type} skin, focus on {skin_concern}, and current routine — the Hydra-Glow Serum looks like a great fit for you, {name}.",
-                "flow_low": "Recommended product: Hydra-Glow Serum.",
-                "own_high": "Here's the profile you created, {name}: You chose {skin_type} skin, prioritised {skin_concern}, and described your routine as '{routine_level}'. Based on the choices you made, the Hydra-Glow Serum matches your profile.",
-                "own_low": "Recommended product: Hydra-Glow Serum."
+                "flow_low": "Recommended product: AquaLuxe Glow Elixir.",
+                "own_high": "Here's the profile you created, {name}: You chose {skin_type} skin, prioritised {skin_concern}, and described your routine as '{routine_level}'. Based on the choices you made, the GlowMist Hydra Essence matches your profile.",
+                "own_low": "Recommended product: Aloe Velvet Glow Essence."
             },
 
             "closing": {
@@ -191,6 +191,7 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
+
 
 
 
