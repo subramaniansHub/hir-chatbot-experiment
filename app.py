@@ -393,15 +393,8 @@ elif not st.session_state['chat_finished']:
              if current_step_name == "recommendation":
                  if st.button("Proceed to Survey", type="primary"):
                      st.session_state['chat_finished'] = True
-                     # st.rerun()
-                     st.markdown(
-                         """
-                         <script>
-                         window.location.reload();
-                         </script>
-                         """,
-                         unsafe_allow_html=True
-                     )
+                     st.rerun()
+                     
              else:
                 if prompt := st.chat_input("Type your answer..."):
                     step = st.session_state['step_index']
@@ -432,9 +425,13 @@ elif not st.session_state['chat_finished']:
 
 # --- SECTION 3: SURVEY ---
 else:
-    # Invisible anchor at top
-  
-   
+    st.markdown("""
+    <script>
+    window.onload = function() {
+        window.scrollTo(0, 0);
+    };
+    </script>
+    """, unsafe_allow_html=True)
 
     ### Heading for Survey
     st.subheader("Post-Interaction Survey")
@@ -519,6 +516,7 @@ if st.session_state['responses_submitted']:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
