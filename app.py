@@ -451,7 +451,7 @@ else:
         submitted = st.form_submit_button("Submit Responses",disabled=st.session_state['responses_submitted'])
 
         
-        if submitted and not st.session_state['responses_submitted']::
+        if submitted and not st.session_state['responses_submitted']:
             #save_response()
             save_response(
                 experiment_name=f"Experiment {st.session_state['experiment_group']}",
@@ -467,6 +467,7 @@ else:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
