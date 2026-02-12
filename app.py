@@ -216,7 +216,7 @@ elif not st.session_state['started']:
         
     with col2:
         st.markdown("""
-        <div style='text-align: left; padding-top: 20px;'>
+        <div style='text-align: left; padding-top: 60px;'>
             <h3 style='color: #780741;'>Experience the future of personalized skincare.</h3>
             <p style='color: #780741; font-size: 1.1rem; line-height: 1.6;'>
                 Our skincare assistant creates a unique formulation just for you. 
@@ -468,6 +468,7 @@ else:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
