@@ -315,7 +315,7 @@ elif not st.session_state['chat_finished']:
                     img_html = f"""
                     <div style='text-align: center; margin: 15px 0;'>
                         <img src='data:image/png;base64,{img_b64}'
-                             style='max-width: 85%; height: auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'
+                             style='max-width: 70%; height: auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'
                                     box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
                     </div>
                     """
@@ -505,6 +505,7 @@ else:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
