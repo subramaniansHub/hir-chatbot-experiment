@@ -393,6 +393,7 @@ elif not st.session_state['chat_finished']:
              if current_step_name == "recommendation":
                  if st.button("Proceed to Survey", type="primary"):
                      st.session_state['chat_finished'] = True
+                     st.session_state['jump_to_top'] = True
                      st.rerun()
              else:
                 if prompt := st.chat_input("Type your answer..."):
@@ -425,17 +426,17 @@ elif not st.session_state['chat_finished']:
 # --- SECTION 3: SURVEY ---
 else:
     # Invisible anchor at top
+    if st.session_state.get("jump_to_top", False):
+    st.session_state["jump_to_top"] = False
     st.markdown(
-    """
-    <script>
-    setTimeout(function() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }, 300);
-    </script>
-    """,
-    unsafe_allow_html=True
+        """
+        <script>
+        window.parent.scrollTo(0, 0);
+        </script>
+        """,
+        unsafe_allow_html=True
     )
+
 
 
     ### Heading for Survey
@@ -521,6 +522,7 @@ if st.session_state['responses_submitted']:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
