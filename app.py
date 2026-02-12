@@ -427,15 +427,15 @@ elif not st.session_state['chat_finished']:
 else:
     # Invisible anchor at top
     if st.session_state.get("jump_to_top", False):
-    st.session_state["jump_to_top"] = False
-    st.markdown(
-        """
-        <script>
-        window.parent.scrollTo(0, 0);
-        </script>
-        """,
-        unsafe_allow_html=True
-    )
+        st.session_state["jump_to_top"] = False
+        st.markdown(
+            """
+            <script>
+            window.parent.scrollTo(0, 0);
+            </script>
+            """,
+            unsafe_allow_html=True
+        )
 
 
 
@@ -522,6 +522,7 @@ if st.session_state['responses_submitted']:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
