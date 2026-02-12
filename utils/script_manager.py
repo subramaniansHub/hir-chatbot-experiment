@@ -130,12 +130,15 @@ class ScriptManager:
                 "own_low": "Preferred texture:"
             },
 
-            "recommendation": {
-                "flow_high": "Based on everything you've shared — your {skin_type} skin, focus on {skin_concern}, and current routine — the Hydra-Glow Satin Serum looks like a great fit for you, {name}.",
-                "flow_low": "Recommended product: AquaLuxe Premium Nectar.",
-                "own_high": "Here's the profile you created, {name}: You chose {skin_type} skin, prioritised {skin_concern}, and described your routine as '{routine_level}'. Based on the choices you made, the GlowMist Silky Essence matches your profile.",
-                "own_low": "Recommended product: AloeVelvet Lumi Shine."
-            },
+           "recommendation": {
+            "flow_high": "Based on everything you've shared — your {skin_type} skin, focus on {skin_concern}, and current routine — the <span style='color:#780741; font-size:16px; font-weight:700;'>Hydra-Glow Satin Serum</span> looks like a great fit for you, {name}.",
+            
+            "flow_low": "Recommended product: <span style='color:#780741; font-size:16px; font-weight:700;'>AquaLuxe Premium Nectar</span>.",
+            
+            "own_high": "Here's the profile you created, {name}: You chose {skin_type} skin, prioritised {skin_concern}, and described your routine as '{routine_level}'. Based on the choices you made, the <span style='color:#780741; font-size:16px; font-weight:700;'>GlowMist Silky Essence</span> matches your profile.",
+            
+            "own_low": "Recommended product: <span style='color:#780741; font-size:16px; font-weight:700;'>AloeVelvet Lumi Shine</span>."
+            }
 
             "closing": {
                 "flow_high": "It was lovely interacting with you, {name}!. I hope this helps you feel better in your skincare journey.",
@@ -191,6 +194,7 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
+
 
 
 
