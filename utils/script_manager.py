@@ -43,7 +43,7 @@ class ScriptManager:
                 "flow_high": "Hello! I'm Heera, your personal skincare assistant. I'm excited to understand your skin and guide you step by step.",
                 "flow_low": "Welcome. You are chatting with the skincare assistant.",
                 "own_high": "Hi! I'm Heera. I am here to help you decide the ideal skincare solution for yourself. Let's build it together with you leading it.",
-                "own_low": "You are chatting with the skincare AI assistant."
+                "own_low": "You are chatting with the skincare assistant."
             },
 
             "ask_name": {
@@ -191,6 +191,7 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
+
 
 
 
