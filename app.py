@@ -177,10 +177,10 @@ if not st.session_state.get('consent_given', False):
     Thank you for your interest in participating in this study.
     
     **Study Purpose:**
-    This academic study aims to understand user interactions with AI assistants in the context of Personal Care product recommendations.
+    This academic study aims to understand user interactions with Chatbots in the context of Personal Care product recommendations.
     
     **Your task:**
-    To interact with the AI Assistant of a hypothetical Skincare brand. Do so assuming that you are going through a real skincare consultation. 
+    To interact with the Chatbot of a hypothetical Skincare brand. Do so assuming that you are going through a real skincare consultation. 
     
     **Privacy:**
     -   No personal data will be stored or shared.
@@ -218,7 +218,7 @@ elif not st.session_state['started']:
         <div style='text-align: left; padding-top: 20px;'>
             <h3 style='color: #2C3E50;'>Experience the future of personalized skincare.</h3>
             <p style='color: #555; font-size: 1.1rem; line-height: 1.6;'>
-                Our AI-powered assistant creates a unique formulation just for you. 
+                Our skincare assistant creates a unique formulation just for you. 
                 Discover the perfect balance for your skin in minutes.
             </p>
             <p style='color: #888; font-size: 0.9rem; margin-bottom: 30px;'>
@@ -467,6 +467,7 @@ else:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
