@@ -92,6 +92,9 @@ DISPENSER_IMAGE_PATH = os.path.join(IMAGES_DIR, 'dispenser.png')
 
 
 # --- SESSION STATE INITIALIZATION ---
+if 'responses_submitted' not in st.session_state:
+    st.session_state['responses_submitted'] = False
+
 if 'experiment_group' not in st.session_state:
     st.session_state['experiment_group'] = random.choice(['Flow', 'Ownership'])
     st.session_state['condition_type'] = random.choice(['High', 'Low'])
@@ -444,7 +447,10 @@ else:
             )
 
 
-        submitted = st.form_submit_button("Submit Responses")
+        # submitted = st.form_submit_button("Submit Responses")
+        submitted = st.form_submit_button("Submit Responses",disabled=st.session_state['responses_submitted']
+)
+
         
         if submitted:
             #save_response()
@@ -453,7 +459,9 @@ else:
                 condition=st.session_state['full_condition'],
                 data_dict=response_data
             )
+            st.session_state['responses_submitted'] = True
             st.success("Thank you! Your responses have been recorded.")
+            
 
 
 
