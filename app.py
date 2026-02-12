@@ -435,14 +435,7 @@ else:
         st.write("Thank you for chatting! Please answer the following questions.")
         st.divider()
 
-        # 👇 AGE OUTSIDE FORM
-        age1 = st.number_input(
-            "What is your age?",
-            min_value=18,
-            max_value=100,
-            key="age_input"
-        )
-        
+      
         with st.form("survey_form"):
     
             response_data = {}
@@ -522,6 +515,7 @@ if st.session_state['responses_submitted']:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
