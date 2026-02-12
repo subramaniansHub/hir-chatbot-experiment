@@ -205,7 +205,7 @@ elif not st.session_state['started']:
     st.markdown("""
     <div style='text-align: center; margin-bottom: 30px;'>
         <!-- <h1 style='color: #2C3E50; font-family: "Playfair Display", serif;'>Skin Kind Products</h1> -->
-        <h1 style="color:#780741; font-family:'Playfair Display', serif; white-space: nowrap;">Skin Kind Products </h1>">
+        <h1 style="color:#780741; font-family:'Playfair Display', serif; white-space: nowrap;">Skin Kind Products </h1>
     </div>
     """, unsafe_allow_html=True)
 
@@ -468,6 +468,7 @@ else:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
