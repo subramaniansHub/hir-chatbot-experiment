@@ -425,12 +425,12 @@ elif not st.session_state['chat_finished']:
 
 # --- SECTION 3: SURVEY ---
 else:
-    st.empty()
+    #st.empty()
     
 
     ### Heading for Survey
-    #st.title("Post-Interaction Survey")
-    st.subheader("Post-Interaction Survey")
+    st.title("Post-Interaction Survey")
+    #st.subheader("Post-Interaction Survey")
     st.write("Thank you for chatting! Please answer the following questions.")
     st.divider()
     
@@ -513,6 +513,7 @@ if st.session_state['responses_submitted']:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
