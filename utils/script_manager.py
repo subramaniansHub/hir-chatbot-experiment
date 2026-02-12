@@ -24,15 +24,15 @@ class ScriptManager:
         self.step_options = {
             "greeting": None,
             "ask_name": None,
-            "ask_skin_type": ["Oily", "Dry", "Combination", "Normal"],
+            "ask_skin_type": ["Normal", "Oily", "Dry", "Combination"],
             "ask_concern": ["Acne / Blemishes", "Aging / Wrinkles", "Dryness", "Pigmentation / Spots"],
-            "ask_duration": ["Very recently", "1–2 months", "Over a year", "Always had it"],
+            "ask_duration": ["Very recently", "About 1–2 months", "Over a year", "Always had it"],
             "ask_routine": ["Just water", "Only Moisturizer", "Cleanser & Moisturizer", "Full multi-step routine"],
             "ask_makeup": ["Daily", "Occasionally", "Weekends only", "Rarely / Never"],
             "ask_sun": ["High exposure", "Moderate exposure", "Low exposure", "Zero exposure"],
             "ask_sleep": ["Less than 5 hrs", "5–6 hrs", "7–8 hrs", "More than 8 hrs"],
             "ask_stress": ["Very high", "Moderate", "Low", "Rarely stressed"],
-            "ask_fragrance": ["Unscented", "Mild scents",  "Bold scents", "No preference"],
+            "ask_fragrance": ["Unscented", "Mild scent",  "Bold scent", "No specific preference"],
             "ask_sensitivity": ["Very sensitive", "Sometimes reactive", "Resilient skin", "Unsure"],
             "ask_preference": ["Lightweight Gel", "Rich Cream", "Oil-based", "Milky Lotion"]
         }
@@ -61,9 +61,9 @@ class ScriptManager:
             },
 
             "ask_concern": {
-                "flow_high": "Got it- you have {skin_type} skin. What would you like to focus on the most?",
+                "flow_high": "Got it - you have {skin_type} skin. What would you like to focus on the most?",
                 "flow_low": "Select main concern.",
-                "own_high": "You chose {skin_type} skin. What goal would you like to prioritise?",
+                "own_high": "You chose {skin_type} skin. What issue would you like to prioritise?",
                 "own_low": "Select main concern:"
             },
 
@@ -112,7 +112,7 @@ class ScriptManager:
             "ask_fragrance": {
                 "flow_high": "Some people with {skin_type} skin prefer specific scents. What type of fragrance do you prefer?",
                 "flow_low": "Fragrance preferred in product:",
-                "own_high": "Would you choose a scented product for your skin or prefer neutral ones?",
+                "own_high": "Would you choose a scented product for your skin or prefer neutral ones? Choose an option:",
                 "own_low": "Fragrance preferred in product:"
             },
 
@@ -191,6 +191,7 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
+
 
 
 
