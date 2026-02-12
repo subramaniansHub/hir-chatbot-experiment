@@ -425,19 +425,14 @@ elif not st.session_state['chat_finished']:
 
 # --- SECTION 3: SURVEY ---
 else:
-    st.markdown("""
-    <script>
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-    }
-    window.scrollTo(0, 0);
-    </script>
-    """, unsafe_allow_html=True)
-
+    st.empty()
+    
 
     ### Heading for Survey
+    #st.title("Post-Interaction Survey")
     st.subheader("Post-Interaction Survey")
     st.write("Thank you for chatting! Please answer the following questions.")
+    st.divider()
     
     with st.form("survey_form"):
         response_data = {}
@@ -518,6 +513,7 @@ if st.session_state['responses_submitted']:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
