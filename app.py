@@ -310,20 +310,20 @@ elif not st.session_state['chat_finished']:
                 #    st.error(f"Image load error: {e}")
 
                 try:
-                img_b64 = get_img_as_base64(image_path)
-            
-                img_html = f"""
-                <div style='text-align: center; margin: 15px 0;'>
-                    <img src='data:image/png;base64,{img_b64}'
-                         style='max-width: 85%; height: auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'
-                                box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
-                </div>
-                """
+                    img_b64 = get_img_as_base64(image_path)
+                
+                    img_html = f"""
+                    <div style='text-align: center; margin: 15px 0;'>
+                        <img src='data:image/png;base64,{img_b64}'
+                             style='max-width: 85%; height: auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'
+                                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
+                    </div>
+                    """
 
-    st.session_state['messages'].append({"role": "assistant", "content": img_html})
-
-except Exception as e:
-    st.error(f"Image load error: {e}")
+                    st.session_state['messages'].append({"role": "assistant", "content": img_html})
+                
+                except Exception as e:
+                    st.error(f"Image load error: {e}")
 
 
 
@@ -505,6 +505,7 @@ else:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
