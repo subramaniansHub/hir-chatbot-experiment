@@ -93,10 +93,18 @@ DISPENSER_IMAGE_PATH = os.path.join(IMAGES_DIR, 'dispenser.png')
 # Recommended images
 PRODUCT_IMAGES = {
     "Hydra-Glow Satin Serum": "images/hydraglow.png",
-    "AquaLuxe Premium Nectar": "images/aqualuxe.png",
+    "AquaLuxe Ultra Nectar": "images/dispenser.png",
     "GlowMist Silky Essence": "images/glowmist.png",
-    "AloeVelvet Lumi Shine": "images/aloevera.png"
+    "AloeVelvet Lumi Shine": "images/dispenser.png"
 }
+
+PRODUCT_BY_CONDITION = {
+    ("Flow", "High"): "Hydra-Glow Satin Serum",
+    ("Flow", "Low"): "AquaLuxe Ultra Nectar",
+    ("Ownership", "High"): "GlowMist Silky Essence",
+    ("Ownership", "Low"): "AloeVelvet Lumi Shine"
+}
+
 
 # --- SESSION STATE INITIALIZATION ---
 if 'responses_submitted' not in st.session_state:
@@ -288,14 +296,21 @@ elif not st.session_state['chat_finished']:
         
         if success:
              # Check if recommendation step
-            if st.session_state['script_manager'].steps[st.session_state['step_index']] == "recommendation":
-                # We can append an image message or just show it
+           if st.session_state['script_manager'].steps[st.session_state['step_index']] == "recommendation":
+
+                group = st.session_state['experiment_group']
+                condition = st.session_state['condition_type']
+            
+                product_name = PRODUCT_BY_CONDITION.get((group, condition))
+                image_path = PRODUCT_IMAGES.get(product_name)
+            
                 try:
-                    img_b64 = get_img_as_base64(DISPENSER_IMAGE_PATH)
+                    img_b64 = get_img_as_base64(image_path)
                     img_html = f"<img src='data:image/png;base64,{img_b64}' width='300' style='border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>"
                     st.session_state['messages'].append({"role": "assistant", "content": img_html})
                 except Exception as e:
                     st.error(f"Image load error: {e}")
+
 
                 # --- ADD CLOSING TEXT JUST BELOW RECOMMENDATION ---
                 closing_index = st.session_state['step_index'] + 1
@@ -475,6 +490,7 @@ else:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
