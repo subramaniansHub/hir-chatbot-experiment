@@ -295,12 +295,10 @@ elif not st.session_state['chat_finished']:
         success, _ = add_bot_message_for_current_step()
         
         if success:
-             # Check if recommendation step
-           if st.session_state['script_manager'].steps[st.session_state['step_index']] == "recommendation":
-
+            # Check if recommendation step
+            if st.session_state['script_manager'].steps[st.session_state['step_index']] == "recommendation":
                 group = st.session_state['experiment_group']
                 condition = st.session_state['condition_type']
-            
                 product_name = PRODUCT_BY_CONDITION.get((group, condition))
                 image_path = PRODUCT_IMAGES.get(product_name)
             
@@ -490,6 +488,7 @@ else:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
