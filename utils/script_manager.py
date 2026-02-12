@@ -40,65 +40,65 @@ class ScriptManager:
         self.scripts = {
 
             "greeting": {
-                "flow_high": "Hello! I'm Heera, your personal skincare assistant. I'm excited to learn about your skin and guide you step by step.",
+                "flow_high": "Hello! I'm Heera, your personal skincare assistant. I'm excited to understand your skin and guide you step by step.",
                 "flow_low": "Welcome. You are chatting with the skincare assistant.",
                 "own_high": "Hi! I'm Heera. I am here to help you decide the ideal skincare solution for yourself. Let's build it together with you leading it.",
                 "own_low": "You are chatting with the skincare AI assistant."
             },
 
             "ask_name": {
-                "flow_high": "Before we begin, may I know your name or how you'd like me to call you?",
+                "flow_high": "Before we begin, what should I call you?",
                 "flow_low": "Enter your name.",
                 "own_high": "What should I call you as we create your skincare plan?",
                 "own_low": "Input your name:"
             },
 
             "ask_skin_type": {
-                "flow_high": "Lovely to meet you, {name}. How would you describe your skin type?",
+                "flow_high": "Nice to meet you, {name}. How would you describe your skin type?",
                 "flow_low": "Select skin type.",
                 "own_high": "{name}, which skin type best represents you?",
                 "own_low": "Choose skin type:"
             },
 
             "ask_concern": {
-                "flow_high": "I understand you have {skin_type} skin. What concern would you like to focus on first?",
-                "flow_low": "Select concern.",
+                "flow_high": "Got it- you have {skin_type} skin. What would you like to focus on the most?",
+                "flow_low": "Select main concern.",
                 "own_high": "You chose {skin_type} skin. What goal would you like to prioritise?",
-                "own_low": "Select concern:"
+                "own_low": "Select main concern:"
             },
 
             "ask_duration": {
-                "flow_high": "Since you mentioned {skin_concern}, how long has this been affecting you?",
+                "flow_high": "Thanks for sharing that. How long has {skin_concern} been affecting you?",
                 "flow_low": "Duration of the concern:",
-                "own_high": "It's good you are well aware of yourself!. How long have you been dealing with {skin_concern}?",
+                "own_high": "How long have you been dealing with {skin_concern}?",
                 "own_low": "Duration of the concern:"
             },
 
             "ask_routine": {
-                "flow_high": "That helps. What does your current routine look like for managing {skin_concern}?",
-                "flow_low": "Present skincare routine:",
-                "own_high": "Tell me about your current routine so we can build around it.",
-                "own_low": "Present skincare routine:"
+                "flow_high": "That helps me understand your skin better. What does your current routine look like?",
+                "flow_low": "Current skincare routine:",
+                "own_high": "You are well aware of your skin!. Tell me about your current routine so we can build around it.",
+                "own_low": "Current skincare routine:"
             },
 
             "ask_makeup": {
-                "flow_high": "Thanks. With a '{routine_level}' routine, how often do you wear makeup?",
+                "flow_high": "Since you follow a {routine_level} routine, how often do you wear makeup?",
                 "flow_low": "Makeup frequency:",
-                "own_high": "How does makeup fit into your routine?",
+                "own_high": "How does makeup fit into your lifestyle?",
                 "own_low": "Makeup frequency:"
             },
 
             "ask_sun": {
-                "flow_high": "Considering your {routine_level} routine and concern about {skin_concern}, how much sun exposure do you usually get?",
+                "flow_high": "Considering your routine and concern about {skin_concern}, how much sun exposure do you usually get?",
                 "flow_low": "Sun exposure:",
                 "own_high": "Am pretty sure you'll know how much sun does your skins get on a regular basis. We'll factor that into your solution.",
                 "own_low": "Sun exposure:"
             },
 
             "ask_sleep": {
-                "flow_high": "Sleep also impacts {skin_concern}. How many hours do you typically sleep?",
+                "flow_high": "Sleep can impact {skin_concern}. How many hours do you typically sleep?",
                 "flow_low": "Sleep duration:",
-                "own_high": "As you'd know, sleep shapes your skin health. How is your sleep pattern? ",
+                "own_high": "As you'd know, sleep can impact your skin health. How is your sleep pattern? ",
                 "own_low": "Sleep duration:"
             },
 
@@ -110,21 +110,21 @@ class ScriptManager:
             },
 
             "ask_fragrance": {
-                "flow_high": "Some people with {skin_type} skin prefer specific scents. What's your fragrance preference?",
+                "flow_high": "Some people with {skin_type} skin prefer specific scents. What type of fragrance do you prefer?",
                 "flow_low": "Fragrance preferred in product:",
-                "own_high": "Do you enjoy scented products or prefer neutral ones?",
+                "own_high": "Would you choose a scented product for your skin or prefer neutral ones?",
                 "own_low": "Fragrance preferred in product:"
             },
 
             "ask_sensitivity": {
-                "flow_high": "Given your {skin_concern} concern, do you have any sensitivities we should be careful about?",
+                "flow_high": "Given your {skin_concern} concern, do you have any sensitivities we should consider?",
                 "flow_low": "Sensitivity status:",
-                "own_high": "I am sure you'd be aware of your sensitivities. Any that you want us to avoid?",
+                "own_high": "I am sure you'd be well aware of your sensitivities. Any that you want us to avoid?",
                 "own_low": "Sensitivity status:"
             },
 
             "ask_preference": {
-                "flow_high": "Almost done, {name}. What texture feels best for your skin?",
+                "flow_high": "Almost done, {name}. What texture feels most comfortable for your skin?",
                 "flow_low": "Texture preference:",
                 "own_high": "You'll surely know the texture you personally prefer. Right?",
                 "own_low": "Preferred texture:"
@@ -132,15 +132,15 @@ class ScriptManager:
 
             "recommendation": {
                 "flow_high": "Based on everything you've shared — your {skin_type} skin, focus on {skin_concern}, and current routine — the Hydra-Glow Serum looks like a great fit for you, {name}.",
-                "flow_low": "Recommended: Hydra-Glow Serum.",
+                "flow_low": "Recommended product: Hydra-Glow Serum.",
                 "own_high": "Here's the profile you created, {name}: You chose {skin_type} skin, prioritised {skin_concern}, and described your routine as '{routine_level}'. Based on the choices you made, the Hydra-Glow Serum matches your profile.",
-                "own_low": "Recommended: Hydra-Glow Serum."
+                "own_low": "Recommended product: Hydra-Glow Serum."
             },
 
             "closing": {
-                "flow_high": "It was lovely interacting with you, {name}!. I hope this helps you feel more confident in your skincare journey.",
+                "flow_high": "It was lovely interacting with you, {name}!. I hope this helps you feel better in your skincare journey.",
                 "flow_low": "End of chat.",
-                "own_high": "This was wonderful, {name}!. You were well aware about yourself and that helped in arriving at your skincare profile.",
+                "own_high": "{name}, you were well aware about your skin - that certainly helped in arriving at a solution for your skincare profile.",
                 "own_low": "End of chat."
             }
         }
@@ -191,6 +191,7 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
+
 
 
 
