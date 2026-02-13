@@ -17,7 +17,7 @@ def get_img_as_base64(file_path):
     return base64.b64encode(data).decode()
 
 # start at chat page
-page = st.query_params.get("page", "chat")
+# page = st.query_params.get("page", "chat")
 
 # Page Configuration
 # st.set_page_config(page_title="Skincare Personal Assistance", page_icon="✨", layout="centered")
@@ -263,8 +263,8 @@ elif not st.session_state['started']:
             st.rerun()
 
 # --- SECTION 2: CHAT INTERFACE ---
-elif page != "survey":
-# elif not st.session_state['chat_finished']:
+# elif page != "survey":
+elif not st.session_state['chat_finished']:
     st.subheader("Let us understand your skin")
     
     # Progress
@@ -432,6 +432,7 @@ elif page != "survey":
         
                      next_step()
                      st.rerun()
+
 
 
 
