@@ -62,7 +62,7 @@ with st.form("survey_form"):
     for q in DEMOGRAPHICS:
         if q['type'] == 'number':
             # response_data[q['id']] = st.number_input(q['question'], min_value=q.get('min_value', 0))
-            response_data[q['id']] = st.number_input(q['question'], min_value=q.get('min_value', 0), value=None, placeholder="Enter age")
+            response_data[q['id']] = st.number_input(q['question'], min_value=q.get('min_value', 18), value=None, placeholder="Enter age")
         elif q['type'] == 'select':
             response_data[q['id']] = st.selectbox(q['question'], q['options'])
         elif q['type'] == 'slider':
