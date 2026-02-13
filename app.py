@@ -22,6 +22,13 @@ def get_img_as_base64(file_path):
 # Page Configuration
 # st.set_page_config(page_title="Skincare Personal Assistance", page_icon="✨", layout="centered")
 st.set_page_config(page_title="Skincare Personal Assistance", page_icon="✨", layout="wide")
+st.markdown("""
+<style>
+/* Hide multipage navigation */
+[data-testid="stSidebarNav"] {display: none;}
+</style>
+""", unsafe_allow_html=True)
+
 
 
 # Custom CSS
@@ -432,6 +439,7 @@ elif not st.session_state['chat_finished']:
         
                      next_step()
                      st.rerun()
+
 
 
 
