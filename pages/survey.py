@@ -10,9 +10,25 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
 
+# Page Configuration
+st.set_page_config(
+    page_title="Post-Interaction Survey",
+    page_icon="✨",
+    layout="wide"
+)
+st.markdown("""
+<style>
+/* Hide multipage navigation */
+[data-testid="stSidebarNav"] {display: none;}
+</style>
+""", unsafe_allow_html=True)
+
 # --- SECTION 3: SURVEY ---
 
 # safe defaults if user refreshes this page directly
+if "chat_finished" not in st.session_state or not st.session_state["chat_finished"]:
+    st.warning("Please complete the chat first.")
+    st.switch_page("app.py")
 if "responses_submitted" not in st.session_state:
     st.session_state["responses_submitted"] = False
 if "experiment_group" not in st.session_state:
