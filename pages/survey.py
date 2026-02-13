@@ -49,6 +49,11 @@ st.title("Post-Interaction Survey")
 st.write("Thank you for chatting! Please answer the following questions.")
 st.divider()
 
+# ---- HARD GUARD (ADD THIS BLOCK HERE) ----
+if st.session_state.get("responses_submitted", False):
+    st.success("Thank you! Your responses have been recorded.")
+    st.stop()
+# ------------------------------------------
 
 with st.form("survey_form"):
 
@@ -110,7 +115,7 @@ with st.form("survey_form"):
 
     # submitted = st.form_submit_button("Submit Responses")
     submitted = st.form_submit_button("Submit Responses",disabled=st.session_state['responses_submitted'])
-    ### FORM ENDS HERE
+    
 
     if submitted and not st.session_state['responses_submitted']:
         #save_response()
@@ -122,7 +127,7 @@ with st.form("survey_form"):
         st.session_state['responses_submitted'] = True
         # st.success("Thank you! Your responses have been recorded.")
         # Force refresh
-        # st.rerun()
+        st.rerun()
         ### FORM ENDS HERE
 
 if st.session_state['responses_submitted']:
