@@ -434,6 +434,12 @@ elif page != "survey":
 
 # --- SECTION 3: SURVEY ---
 else:
+    # Scroll to top when survey loads
+    st.markdown("""
+        <script>
+            window.parent.document.querySelector('section.main').scrollTo(0, 0);
+        </script>
+    """, unsafe_allow_html=True)
     page_key = st.session_state.get("page_key", "default")
 
     with st.container(key=page_key):
@@ -521,6 +527,7 @@ if st.session_state['responses_submitted']:
         st.success("Thank you! Your responses have been recorded.")
 
             
+
 
 
 
