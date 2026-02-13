@@ -401,7 +401,7 @@ elif page != "survey":
                      st.session_state['responses_submitted'] = False
                      # st.session_state['page_key'] = str(time.time())   # force new layout
                      # st.query_params["page"] = "survey"
-                     st.switch_page("utils/survey.py")
+                     st.switch_page("pages/survey.py")
                      # st.rerun()
                      
              # --- NORMAL CHAT INPUT (ONLY WHILE CHAT IS ACTIVE) ---
@@ -432,6 +432,7 @@ elif page != "survey":
         
                      next_step()
                      st.rerun()
+
 
 
 
