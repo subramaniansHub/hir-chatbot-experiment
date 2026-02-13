@@ -46,7 +46,7 @@ if "experiment_group" not in st.session_state:
 
 
 st.title("Post-Interaction Survey")
-st.write("Thank you for interacting with the Chatbot! Please answer the following questions. It should take only 2-3 minutes.")
+st.write("Thank you for interacting with the Chatbot! Please answer the following questions. It should take only 2 minutes.")
 st.divider()
 
 # ---- HARD GUARD (ADD THIS BLOCK HERE) ----
