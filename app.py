@@ -262,7 +262,7 @@ elif not st.session_state['started']:
                 Discover the perfect balance for your skin in minutes.
             </p>
             <p style='color: #888; font-size: 0.9rem; margin-bottom: 30px;'>
-                <em>Takes approximately 3-4 minutes</em>
+                <em>Takes approximately 2-3 minutes</em>
             </p>
         </div>
         """, unsafe_allow_html=True)
@@ -452,6 +452,7 @@ elif not st.session_state['chat_finished']:
         
                      next_step()
                      st.rerun()
+
 
 
 
