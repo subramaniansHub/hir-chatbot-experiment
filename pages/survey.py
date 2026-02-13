@@ -12,6 +12,14 @@ from datetime import datetime
 
 # --- SECTION 3: SURVEY ---
 
+# safe defaults if user refreshes this page directly
+if "responses_submitted" not in st.session_state:
+    st.session_state["responses_submitted"] = False
+if "experiment_group" not in st.session_state:
+    st.warning("Session expired. Please restart the study.")
+    st.stop()
+
+
 st.title("Post-Interaction Survey")
 st.write("Thank you for chatting! Please answer the following questions.")
 st.divider()
