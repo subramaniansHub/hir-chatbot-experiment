@@ -119,6 +119,12 @@ with st.form("survey_form"):
     
 
     if submitted and not st.session_state['responses_submitted']:
+
+        # Mandatory age check
+        if response_data.get("age") is None:
+            st.error("Please enter your age before submitting.")
+            st.stop()
+        
         #save_response()
         save_response(
             experiment_name=f"Experiment {st.session_state['experiment_group']}",
