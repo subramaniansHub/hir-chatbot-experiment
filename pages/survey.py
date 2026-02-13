@@ -15,13 +15,27 @@ st.set_page_config(
     page_title="Post-Interaction Survey",
     page_icon="✨",
     layout="wide"
+    initial_sidebar_state="collapsed"
 )
 st.markdown("""
 <style>
-/* Hide multipage navigation */
-[data-testid="stSidebarNav"] {display: none;}
+/* Hide sidebar completely */
+section[data-testid="stSidebar"] {
+    display: none !important;
+}
+
+/* Remove the top-left hamburger / collapse button */
+button[kind="header"] {
+    display: none !important;
+}
+
+/* Remove extra padding where sidebar used to be */
+div[data-testid="stAppViewContainer"] {
+    margin-left: 0 !important;
+}
 </style>
 """, unsafe_allow_html=True)
+
 
 # --- SECTION 3: SURVEY ---
 
