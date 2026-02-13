@@ -44,6 +44,11 @@ if "experiment_group" not in st.session_state:
     st.warning("Session expired. Please restart the study.")
     st.stop()
 
+# ⭐ If Submitted do not show title ⭐
+if st.session_state.get("responses_submitted", False):
+    st.success("Thank you! Your responses have been recorded.")
+    st.stop()
+
 
 st.title("Post-Interaction Survey")
 st.write("Thank you for interacting with the Chatbot! Please answer the following questions. It should take only 2 minutes.")
