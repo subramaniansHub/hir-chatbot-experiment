@@ -4,41 +4,46 @@ class ScriptManager:
     def __init__(self):
 
         self.steps = [
-            #"greeting",
-            #"ask_name",
-            #"ask_skin_type",
-            #"ask_concern",
-            #"ask_duration",
-            #"ask_routine",
-            #"ask_makeup",
-            #"ask_sun",
-            #"ask_sleep",
-            #"ask_stress",
-            #"ask_sensitivity",
-            #"ask_fragrance",
-            #"ask_preference",
+           """  
+           "greeting",
+            "ask_name",
+            "ask_skin_type",
+            "ask_concern",
+            "ask_duration",
+            "ask_routine",
+            "ask_makeup",
+            "ask_sun",
+            "ask_sleep",
+            "ask_stress",
+            "ask_sensitivity",
+            "ask_fragrance", 
+            """
+            "ask_preference",
             "recommendation",
             "closing"
         ]
 
         self.step_options = {
-            #"greeting": None,
-            #"ask_name": None,
-            #"ask_skin_type": ["Normal", "Oily", "Dry", "Combination"],
-            #"ask_concern": ["Acne / Blemishes", "Aging / Wrinkles", "Dryness", "Pigmentation / Spots"],
-            #"ask_duration": ["Very recently", "About 1–2 months", "Over a year", "Always had it"],
-            #"ask_routine": ["Just water", "Only Moisturizer", "Cleanser & Moisturizer", "Full multi-step routine"],
-            #"ask_makeup": ["Daily", "Occasionally", "Weekends only", "Rarely / Never"],
-            #"ask_sun": ["High exposure", "Moderate exposure", "Low exposure", "Zero exposure"],
-            #"ask_sleep": ["Less than 5 hrs", "5–6 hrs", "7–8 hrs", "More than 8 hrs"],
-            #"ask_stress": ["Very high", "Moderate", "Low", "Rarely stressed"],
-            #"ask_sensitivity": ["Very sensitive", "Sometimes reactive", "Resilient skin", "Unsure"],
-            #"ask_fragrance": ["Unscented", "Mild scent",  "Bold scent", "No specific preference"],
-            #"ask_preference": ["Lightweight Gel", "Rich Cream", "Oil-based", "Milky Lotion"]
+            """ 
+            "greeting": None,
+            "ask_name": None,
+            "ask_skin_type": ["Normal", "Oily", "Dry", "Combination"],
+            "ask_concern": ["Acne / Blemishes", "Aging / Wrinkles", "Dryness", "Pigmentation / Spots"],
+            "ask_duration": ["Very recently", "About 1–2 months", "Over a year", "Always had it"],
+            "ask_routine": ["Just water", "Only Moisturizer", "Cleanser & Moisturizer", "Full multi-step routine"],
+            "ask_makeup": ["Daily", "Occasionally", "Weekends only", "Rarely / Never"],
+            "ask_sun": ["High exposure", "Moderate exposure", "Low exposure", "Zero exposure"],
+            "ask_sleep": ["Less than 5 hrs", "5–6 hrs", "7–8 hrs", "More than 8 hrs"],
+            "ask_stress": ["Very high", "Moderate", "Low", "Rarely stressed"],
+            "ask_sensitivity": ["Very sensitive", "Sometimes reactive", "Resilient skin", "Unsure"],
+            "ask_fragrance": ["Unscented", "Mild scent",  "Bold scent", "No specific preference"], 
+            """
+            "ask_preference": ["Lightweight Gel", "Rich Cream", "Oil-based", "Milky Lotion"]
         }
 
         self.scripts = {
 
+            """ 
             "greeting": {
                 "flow_high": "Hello! I'm Heera, your personal skincare assistant. I'm excited to understand your skin and guide you step by step.",
                 "flow_low": "Welcome. You are chatting with the skincare assistant.",
@@ -122,7 +127,7 @@ class ScriptManager:
                 "own_high": "I am sure you'd be well aware of your sensitivities. Any that you want us to avoid?",
                 "own_low": "Sensitivity status:"
             },
-
+            """
             "ask_preference": {
                 "flow_high": "Almost done, {name}. What texture feels most comfortable for your skin?",
                 "flow_low": "Texture preference:",
@@ -191,7 +196,6 @@ class ScriptManager:
 
     def get_total_steps(self):
         return len(self.steps)
-
 
 
 
