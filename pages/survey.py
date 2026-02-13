@@ -11,12 +11,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
 
 # Page Configuration
-st.set_page_config(
-    page_title="Post-Interaction Survey",
-    page_icon="✨",
-    layout="wide"
-    initial_sidebar_state="collapsed"
-)
+st.set_page_config(page_title="Post-Interaction Survey", page_icon="✨", layout="wide", nitial_sidebar_state="collapsed")
 st.markdown("""
 <style>
 /* Hide sidebar completely */
